@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0017)http://localhost/ -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Index of /</title>
+</head>
+
+<body>
+  <h1>Index of /</h1>
+  <table>
+    <tbody>
+      <tr>
+        <th valign="top"><img src="./img/blank.gif"></th>
+        <th><a href="http://localhost/?C=N;O=D">Name</a></th>
+        <th><a href="http://localhost/?C=M;O=A">Last modified</a></th>
+        <th><a href="http://localhost/?C=S;O=A">Size</a></th>
+        <th><a href="http://localhost/?C=D;O=A">Description</a></th>
+      </tr>
+      <tr>
+        <th colspan="5">
+          <hr>
+        </th>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      var result = JSON.parse(xhr.responseText);
+      console.log(result);
+      var htmls = '';
+      for (var i = 0; i < result.length; i++) {
+        htmls += '<tr>';
+        htmls += '<th valign="top"><img src="./img/blank.gif"></th>';
+        htmls += '<th>' + result[i].name + '</th>';
+        htmls += '<th>' + result[i].mtime + '</th>';
+        htmls += '<th>' + result[i].size + '</th>';
+        htmls += '<th></th>';
+        htmls += '</tr>';
+      }
+      var tb = document.getElementsByTagName('tbody')[0];
+      tb.innerHTML += htmls;
+    }
+  }
+  xhr.open('get', '/filename');
+  xhr.send();
+</script>
+
+</html>
