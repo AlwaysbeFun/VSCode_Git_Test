@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0017)http://localhost/ -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Index of /</title>
+</head>
+
+<body>
+  <h1>Index of /</h1>
+  <table>
+    <tbody>
+      <tr>
+        <th valign="top"><img src="./img/blank.gif" alt="[ICO]"></th>
+        <th><a href="http://localhost/?C=N;O=D">Name</a></th>
+        <th><a href="http://localhost/?C=M;O=A">Last modified</a></th>
+        <th><a href="http://localhost/?C=S;O=A">Size</a></th>
+        <th><a href="http://localhost/?C=D;O=A">Description</a></th>
+      </tr>
+      <tr>
+        <th colspan="5">
+          <hr>
+        </th>
+      </tr>
+      <!-- 使用模板语法进行遍历 -->
+      {{each data}}
+      <tr>
+        <td><a href="http://localhost/0hAdmin/"> {{$value.name}} </a> </td>
+        <td align="right"> {{$value.mtime}} </td>
+        <td align="right"> {{$value.size}} </td>
+        <td>&nbsp;</td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+
+</body>
+
+<script>
+
+
+</script>
+
+</html>
